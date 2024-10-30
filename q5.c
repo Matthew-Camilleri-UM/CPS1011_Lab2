@@ -12,5 +12,5 @@ int main() {
     }
 
     printf("\nTotal number of days: %d\n", dayTotal);
-    printf("This is equal to %d week/s and %d day/s.\n", dayTotal/7 , dayTotal%7);
+    printf("This is equal to %d week/s and %d day/s.\n", dayTotal/daysInWeek , dayTotal%daysInWeek);
 }
