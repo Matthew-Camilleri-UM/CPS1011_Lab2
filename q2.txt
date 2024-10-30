@@ -1,0 +1,48 @@
+1. $4234725.00
+
+2. $4234725.00 - does not change
+
+3.
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+    float weight;
+    double value;
+    printf("Enter your weight in pounds: \n");
+    scanf("%f", &weight);
+    // Platinum is $1770 / pound
+    // 14.5 troy ounces in 1 pound
+    value = round(1770.0 * weight * 14.5 * 10000)/10000;
+    //multiplies by 10000, rounds to integer, and then divides by the same for 4.dp
+    printf ("Your weight in platinum costs $%.4f. \n", value);
+}
+
+4.
+%f : $0.0000
+%d : $4234725
+
+%f looks for a float value in the printf() function but finds none, and uses 0.0000 as a default value (undefined behaviour)
+
+5.
+the integer is printed as normal since we are printing the integer with %d, value and not the corresponding character with %c, char(value)
+
+
+6.
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+    float weight;
+    int value;
+    printf("Enter your weight in pounds: \n");
+    scanf("%f", &weight);
+    // Platinum is $1770 / pound
+    // 14.5 troy ounces in 1 pound
+    value = round(1770.0 * weight * 14.5 * 10000)/10000;
+    //multiplies by 10000, rounds to integer, and then divides by the same for 4.dp
+    printf("Your weight in platinum costs $%d. \n", value);
+
+    printf("Octal index: %o\n", value);
+    printf("Hex index: %x\n", value);
+}
